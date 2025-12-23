@@ -10,8 +10,8 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      background-color: #FDFCF9;
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     }
 
     * {
@@ -21,16 +21,14 @@
     .app-wrapper {
       width: 100%;
       min-height: 100%;
-      background-color: #FDFCF9;
     }
 
-    /* Header */
     .header {
       width: 100%;
-      background: #6B8E6F;
+      background: linear-gradient(135deg, #0669BF 0%, #0880e8 100%);
       color: white;
-      padding: 20px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      padding: 32px 20px;
+      box-shadow: 0 2px 20px rgba(6, 105, 191, 0.15);
     }
 
     .header-content {
@@ -39,31 +37,32 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 16px;
+      gap: 20px;
     }
 
     .logo {
-      width: 50px;
-      height: 50px;
+      width: 56px;
+      height: 56px;
       background-color: white;
-      border-radius: 8px;
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
     .site-title {
-      font-size: 28px;
-      font-weight: bold;
+      font-size: 32px;
+      font-weight: 700;
       margin: 0;
+      letter-spacing: -0.5px;
     }
 
-    /* Main Content */
     .main-content {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 48px 20px;
     }
 
     .screen {
@@ -74,149 +73,144 @@
       display: none;
     }
 
-    /* Welcome Section */
     .welcome-section {
       text-align: center;
-      margin-bottom: 60px;
+      margin-bottom: 56px;
     }
 
     .welcome-title {
-      font-size: 38px;
-      font-weight: bold;
-      color: #5A7A5E;
-      margin-bottom: 18px;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      font-size: 42px;
+      font-weight: 700;
+      color: #221F73;
+      margin-bottom: 16px;
+      letter-spacing: -1px;
     }
 
     .welcome-subtitle {
-      font-size: 19px;
-      color: #555;
+      font-size: 20px;
+      color: #6c757d;
+      font-weight: 400;
     }
 
-    /* Navigation Buttons */
     .nav-buttons {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      max-width: 800px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      max-width: 900px;
       margin: 0 auto;
     }
 
     .nav-btn {
-      background: #8B9D83;
-      color: white;
-      padding: 35px 25px;
-      border: none;
-      border-radius: 4px;
-      font-size: 22px;
-      font-weight: bold;
+      background: white;
+      color: #221F73;
+      padding: 48px 32px;
+      border: 2px solid #e9ecef;
+      border-radius: 16px;
+      font-size: 24px;
+      font-weight: 600;
       cursor: pointer;
-      box-shadow: 0 6px 20px rgba(107, 142, 111, 0.25);
-      transition: all 0.3s ease;
-      text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
     }
 
     .nav-btn:hover {
-      background: #6B8E6F;
-      transform: translateY(-3px);
-      box-shadow: 0 8px 24px rgba(107, 142, 111, 0.35);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(122, 191, 17, 0.15);
+      border-color: #7ABF11;
     }
 
     .nav-btn:active {
-      transform: translateY(0);
+      transform: translateY(-2px);
     }
 
-    /* Back Button */
     .back-btn {
-      background: #B8B08D;
-      color: white;
-      padding: 14px 28px;
-      border: none;
-      border-radius: 4px;
-      font-size: 17px;
-      font-weight: bold;
+      background: white;
+      color: #221F73;
+      padding: 12px 24px;
+      border: 2px solid #e9ecef;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
       cursor: pointer;
-      margin-bottom: 30px;
+      margin-bottom: 24px;
       transition: all 0.3s ease;
-      box-shadow: 0 3px 12px rgba(184, 176, 141, 0.2);
-      text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     }
 
     .back-btn:hover {
-      background: #9A9275;
-      transform: translateY(-2px);
-      box-shadow: 0 5px 16px rgba(184, 176, 141, 0.3);
+      background: #f8f9fa;
+      border-color: #7ABF11;
+      transform: translateX(-4px);
     }
 
-    /* Content Card */
     .content-card {
-      background-color: white;
-      padding: 35px;
-      border-radius: 6px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.12);
-      border: 1px solid #E8E6E0;
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      border: 1px solid #e9ecef;
     }
 
     .section-title {
-      font-size: 30px;
-      font-weight: bold;
-      color: #5A7A5E;
-      margin-bottom: 28px;
-      text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      font-size: 32px;
+      font-weight: 700;
+      color: #221F73;
+      margin-bottom: 32px;
+      letter-spacing: -0.5px;
     }
 
-    /* Floor Indicator */
     .floor-indicator {
-      background: #6B8E6F;
+      background: linear-gradient(135deg, #0669BF 0%, #0880e8 100%);
       color: white;
-      padding: 20px;
-      border-radius: 4px;
+      padding: 24px;
+      border-radius: 16px;
       text-align: center;
-      margin-bottom: 30px;
-      box-shadow: 0 4px 16px rgba(107, 142, 111, 0.2);
+      margin-bottom: 32px;
+      box-shadow: 0 4px 16px rgba(6, 105, 191, 0.15);
     }
 
     .floor-indicator h2 {
-      font-size: 30px;
-      font-weight: bold;
+      font-size: 28px;
+      font-weight: 700;
       margin: 0;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      letter-spacing: -0.5px;
     }
 
-    /* Floor Buttons */
     .floor-buttons {
       display: flex;
       gap: 12px;
       justify-content: center;
       flex-wrap: wrap;
-      margin-bottom: 30px;
+      margin-bottom: 32px;
     }
 
     .floor-btn {
-      background: #A8B89F;
-      color: white;
-      padding: 14px 28px;
-      border: none;
-      border-radius: 4px;
-      font-size: 19px;
-      font-weight: bold;
+      background: white;
+      color: #7ABF11;
+      padding: 12px 24px;
+      border: 2px solid #7ABF11;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: 600;
       cursor: pointer;
-      min-width: 65px;
+      min-width: 60px;
       transition: all 0.3s ease;
-      box-shadow: 0 3px 12px rgba(107, 142, 111, 0.2);
-      text-shadow: 0 1px 2px rgba(0,0,0,0.1);
     }
 
     .floor-btn:hover {
-      background: #6B8E6F;
+      background: #7ABF11;
+      color: white;
       transform: translateY(-2px);
-      box-shadow: 0 5px 16px rgba(107, 142, 111, 0.3);
+      box-shadow: 0 4px 12px rgba(122, 191, 17, 0.2);
     }
 
-    /* Tables */
     .table-container {
       overflow-x: auto;
       margin-bottom: 40px;
+      border-radius: 12px;
+      border: 1px solid #e9ecef;
     }
 
     .booth-table,
@@ -227,30 +221,30 @@
 
     .booth-table thead tr,
     .events-table thead tr {
-      background: #6B8E6F;
+      background: linear-gradient(135deg, #0669BF 0%, #0880e8 100%);
     }
 
     .booth-table th,
     .events-table th {
-      padding: 18px;
+      padding: 20px;
       text-align: left;
       color: white;
-      font-weight: bold;
-      border: 1px solid #E0DED8;
-      text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+      font-weight: 600;
+      border: none;
+      font-size: 16px;
     }
 
     .booth-table td,
     .events-table td {
-      padding: 18px;
-      border: 1px solid #E0DED8;
-      color: #333;
+      padding: 18px 20px;
+      border-bottom: 1px solid #e9ecef;
+      color: #495057;
+      font-size: 15px;
     }
 
     .booth-table tbody tr,
     .events-table tbody tr {
-      border-bottom: 1px solid #ddd;
-      transition: background-color 0.2s ease;
+      transition: all 0.2s ease;
     }
 
     .booth-table tbody tr {
@@ -258,32 +252,36 @@
     }
 
     .booth-table tbody tr:hover {
-      background-color: rgba(139, 157, 131, 0.05);
+      background-color: #f8f9fa;
+    }
+
+    .booth-table tbody tr:last-child td,
+    .events-table tbody tr:last-child td {
+      border-bottom: none;
     }
 
     .booth-table tbody tr td:nth-child(3) {
-      color: #6B8E6F;
-      font-weight: bold;
+      color: #7ABF11;
+      font-weight: 600;
     }
 
-    /* Map Section */
     .map-section {
-      margin-top: 40px;
+      margin-top: 48px;
       text-align: center;
     }
 
     .map-title {
       font-size: 20px;
-      font-weight: bold;
-      color: #6B8E6F;
-      margin-bottom: 20px;
+      font-weight: 600;
+      color: #221F73;
+      margin-bottom: 24px;
     }
 
     .map-container {
-      background-color: #F5F3EE;
-      padding: 20px;
-      border-radius: 12px;
-      border: 2px dashed #D4CFC0;
+      background: #f8f9fa;
+      padding: 32px;
+      border-radius: 16px;
+      border: 2px dashed #dee2e6;
       min-height: 300px;
       display: flex;
       align-items: center;
@@ -294,8 +292,9 @@
     .school-map-img {
       max-width: 100%;
       max-height: 500px;
-      border-radius: 8px;
+      border-radius: 12px;
       display: none;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
     }
 
     .school-map-img[src]:not([src=""]) {
@@ -307,30 +306,29 @@
     }
 
     .map-placeholder {
-      color: #999;
+      color: #adb5bd;
       font-size: 16px;
       padding: 60px 20px;
     }
 
-    /* Search */
     .search-box {
-      margin-bottom: 30px;
+      margin-bottom: 32px;
     }
 
     .search-input {
       width: 100%;
-      padding: 18px;
-      border: 2px solid #D8D4CB;
-      border-radius: 4px;
-      font-size: 17px;
+      padding: 18px 24px;
+      border: 2px solid #e9ecef;
+      border-radius: 12px;
+      font-size: 16px;
       transition: all 0.3s ease;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      background: white;
     }
 
     .search-input:focus {
       outline: none;
-      border-color: #6B8E6F;
-      box-shadow: 0 4px 16px rgba(107, 142, 111, 0.15);
+      border-color: #7ABF11;
+      box-shadow: 0 0 0 4px rgba(122, 191, 17, 0.1);
     }
 
     .search-results {
@@ -339,74 +337,89 @@
     }
 
     .search-result {
-      background-color: white;
-      padding: 26px;
-      border-radius: 4px;
-      border: 2px solid #D8D4CB;
+      background: white;
+      padding: 28px;
+      border-radius: 16px;
+      border: 2px solid #e9ecef;
       cursor: pointer;
       transition: all 0.3s ease;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      position: relative;
+    }
+
+    .search-result::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background: #7ABF11;
+      border-radius: 16px 0 0 16px;
+      transform: scaleY(0);
+      transition: transform 0.3s ease;
     }
 
     .search-result:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(107, 142, 111, 0.2);
-      border-color: #8B9D83;
+      transform: translateX(4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      border-color: #7ABF11;
+    }
+
+    .search-result:hover::before {
+      transform: scaleY(1);
     }
 
     .search-result h3 {
-      font-size: 24px;
-      font-weight: bold;
-      color: #5A7A5E;
-      margin: 0 0 10px 0;
+      font-size: 22px;
+      font-weight: 700;
+      color: #221F73;
+      margin: 0 0 8px 0;
     }
 
     .search-result .club-name {
-      font-size: 19px;
-      color: #6B8E6F;
-      margin-bottom: 14px;
-      font-weight: bold;
+      font-size: 18px;
+      color: #7ABF11;
+      margin-bottom: 12px;
+      font-weight: 600;
     }
 
     .search-result .location {
-      font-size: 17px;
-      color: #555;
-      margin-bottom: 18px;
+      font-size: 16px;
+      color: #6c757d;
+      margin-bottom: 16px;
     }
 
     .search-result .keywords {
-      font-size: 15px;
-      color: #888;
+      font-size: 14px;
+      color: #adb5bd;
     }
 
     .search-result .more-btn {
-      background: #8B9D83;
+      background: linear-gradient(135deg, #7ABF11 0%, #0669BF 100%);
       color: white;
-      padding: 12px 22px;
+      padding: 12px 24px;
       border: none;
-      border-radius: 4px;
+      border-radius: 10px;
       font-size: 15px;
-      font-weight: bold;
+      font-weight: 600;
       cursor: pointer;
-      margin-top: 18px;
+      margin-top: 16px;
       width: 100%;
       transition: all 0.3s ease;
-      box-shadow: 0 3px 12px rgba(107, 142, 111, 0.2);
-      text-shadow: 0 1px 2px rgba(0,0,0,0.1);
     }
 
     .search-result .more-btn:hover {
-      background: #6B8E6F;
-      box-shadow: 0 5px 16px rgba(107, 142, 111, 0.3);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(122, 191, 17, 0.3);
     }
 
     .no-results {
       text-align: center;
-      color: #666;
-      padding: 40px;
+      color: #adb5bd;
+      padding: 60px;
+      font-size: 16px;
     }
 
-    /* Modal */
     .modal {
       position: fixed;
       top: 0;
@@ -420,6 +433,7 @@
       align-items: center;
       justify-content: center;
       padding: 20px;
+      backdrop-filter: blur(4px);
     }
 
     .modal.hidden {
@@ -427,79 +441,98 @@
     }
 
     .modal-content {
-      background-color: white;
+      background: white;
       max-width: 600px;
       width: 100%;
-      padding: 45px;
-      border-radius: 6px;
+      padding: 48px;
+      border-radius: 20px;
       position: relative;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-      border: 1px solid #E8E6E0;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      animation: modalFadeIn 0.3s ease;
+    }
+
+    @keyframes modalFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .close-btn {
       position: absolute;
       top: 20px;
       right: 20px;
-      background: #B8B08D;
-      color: white;
+      background: #f8f9fa;
+      color: #495057;
       border: none;
-      width: 42px;
-      height: 42px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
-      font-size: 26px;
+      font-size: 24px;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
       transition: all 0.3s ease;
-      box-shadow: 0 3px 12px rgba(184, 176, 141, 0.25);
     }
 
     .close-btn:hover {
-      background: #9A9275;
+      background: #e9ecef;
       transform: rotate(90deg);
     }
 
     .modal-title {
-      font-size: 30px;
-      font-weight: bold;
-      color: #5A7A5E;
-      margin-bottom: 18px;
-      text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      font-size: 28px;
+      font-weight: 700;
+      color: #221F73;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
     }
 
     .modal-club {
-      font-size: 21px;
-      color: #6B8E6F;
-      margin-bottom: 22px;
-      font-weight: bold;
+      font-size: 20px;
+      color: #7ABF11;
+      margin-bottom: 20px;
+      font-weight: 600;
     }
 
     .modal-location {
-      font-size: 19px;
-      color: #555;
-      margin-bottom: 14px;
+      font-size: 17px;
+      color: #6c757d;
+      margin-bottom: 12px;
+      padding: 12px 16px;
+      background: #f8f9fa;
+      border-radius: 8px;
+      display: inline-block;
+    }
+
+    .modal-keywords {
+      font-size: 14px;
+      color: #adb5bd;
+      margin-bottom: 24px;
     }
 
     .modal-description {
-      font-size: 17px;
-      color: #333;
-      line-height: 1.7;
+      font-size: 16px;
+      color: #495057;
+      line-height: 1.8;
     }
 
-    /* Responsive */
     @media (max-width: 768px) {
       .site-title {
-        font-size: 22px;
+        font-size: 24px;
       }
       
       .welcome-title {
-        font-size: 28px;
+        font-size: 32px;
       }
       
       .welcome-subtitle {
-        font-size: 16px;
+        font-size: 18px;
       }
       
       .nav-buttons {
@@ -507,28 +540,28 @@
       }
       
       .nav-btn {
-        font-size: 18px;
-        padding: 25px 20px;
+        font-size: 20px;
+        padding: 36px 24px;
       }
       
       .content-card {
-        padding: 20px;
+        padding: 24px;
       }
       
       .section-title {
-        font-size: 24px;
+        font-size: 26px;
       }
       
       .booth-table th,
       .booth-table td,
       .events-table th,
       .events-table td {
-        padding: 12px 8px;
+        padding: 14px 12px;
         font-size: 14px;
       }
       
       .modal-content {
-        padding: 30px 20px;
+        padding: 32px 24px;
       }
       
       .modal-title {
@@ -538,29 +571,29 @@
 
     @media (max-width: 480px) {
       .header {
-        padding: 15px;
+        padding: 24px 15px;
       }
       
       .logo {
-        width: 40px;
-        height: 40px;
+        width: 48px;
+        height: 48px;
       }
       
       .logo svg {
-        width: 28px;
-        height: 28px;
+        width: 32px;
+        height: 32px;
       }
       
       .site-title {
-        font-size: 18px;
+        font-size: 20px;
       }
       
       .main-content {
-        padding: 20px 15px;
+        padding: 32px 15px;
       }
       
       .welcome-title {
-        font-size: 24px;
+        font-size: 28px;
       }
       
       .floor-buttons {
@@ -579,17 +612,17 @@
   <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
  </head>
  <body>
-  <div class="app-wrapper">
+  <div class="app-wrapper"><!-- Header -->
    <header class="header">
     <div class="header-content">
      <div class="logo">
-      <svg width="36" height="36" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#8B9D83" /> <path d="M2 17L12 22L22 17" stroke="#8B9D83" stroke-width="2" /> <path d="M2 12L12 17L22 12" stroke="#8B9D83" stroke-width="2" />
+      <img scr="logo.png">
       </svg>
      </div>
-     <h1 id="site-title" class="site-title">I DONT KNOW</h1>
+     <h1 id="site-title" class="site-title">2025 달내제 안내</h1>
     </div>
-   </header>
-   <main class="main-content">
+   </header><!-- Main Content -->
+   <main class="main-content"><!-- Lobby Screen -->
     <div id="lobby-screen" class="screen">
      <div class="welcome-section">
       <h2 class="welcome-title">학교 축제에 오신 것을 환영합니다</h2>
@@ -597,13 +630,13 @@
      </div>
      <div class="nav-buttons"><button id="btn-booth-map" class="nav-btn"> <span id="nav-booth-map">부스 지도</span> </button> <button id="btn-booth-search" class="nav-btn"> <span id="nav-booth-search">부스 찾기</span> </button> <button id="btn-events" class="nav-btn"> <span id="nav-events">학교 행사 안내</span> </button>
      </div>
-    </div>
+    </div><!-- Booth Map Screen -->
     <div id="booth-map-screen" class="screen hidden"><button id="back-from-map" class="back-btn">← 돌아가기</button>
      <div class="content-card">
       <div class="floor-indicator">
        <h2 id="current-floor">1층</h2>
       </div>
-      <div class="floor-buttons"><button class="floor-btn" data-floor="1">1</button> <button class="floor-btn" data-floor="2">2</button> <button class="floor-btn" data-floor="3">3</button> <button class="floor-btn" data-floor="4">4</button> <button class="floor-btn" data-floor="5">5</button>
+      <div class="floor-buttons"><button class="floor-btn" data-floor="1">1층</button> <button class="floor-btn" data-floor="2">2층</button> <button class="floor-btn" data-floor="3">3층</button> <button class="floor-btn" data-floor="4">4층</button> <button class="floor-btn" data-floor="5">5층</button>
       </div>
       <div class="table-container">
        <table id="booth-table" class="booth-table">
@@ -617,15 +650,9 @@
         <tbody id="booth-table-body">
         </tbody>
        </table>
-      </div>
-      <div class="map-section">
-       <h3 class="map-title">학교 지도</h3>
-       <div class="map-container"><img id="school-map" src="" alt="학교 지도를 여기에 넣어주세요" class="school-map-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <p class="map-placeholder">여기에 학교 지도 이미지를 넣어주세요</p>
-       </div>
-      </div>
+      </div> 
      </div>
-    </div>
+    </div><!-- Booth Search Screen -->
     <div id="booth-search-screen" class="screen hidden"><button id="back-from-search" class="back-btn">← 돌아가기</button>
      <div class="content-card">
       <h2 class="section-title">부스 찾기</h2>
@@ -635,7 +662,7 @@
        <p class="no-results">검색어를 입력해주세요</p>
       </div>
      </div>
-    </div>
+    </div><!-- Events Screen -->
     <div id="events-screen" class="screen hidden"><button id="back-from-events" class="back-btn">← 돌아가기</button>
      <div class="content-card">
       <h2 class="section-title">학교 행사 안내</h2>
@@ -655,7 +682,7 @@
           <td>9:00 ~ 11:30</td>
          </tr>
          <tr>
-          <td>꿈빛 파티시엘 (쿠키 꾸미기)</td>
+          <td>달빛 파티시엘 (쿠키 꾸미기)</td>
           <td>3층 학생자치실</td>
           <td>9:00 ~ 11:30</td>
          </tr>
@@ -684,19 +711,20 @@
       </div>
      </div>
     </div>
-   </main>
+   </main><!-- Modal for Booth Details -->
    <div id="booth-modal" class="modal hidden">
     <div class="modal-content"><button id="close-modal" class="close-btn">×</button>
      <h3 id="modal-booth-name" class="modal-title"></h3>
      <p id="modal-club-name" class="modal-club"></p>
      <p id="modal-location" class="modal-location">📍 <span></span></p>
+     <p id="modal-keywords" class="modal-keywords"></p>
      <p id="modal-description" class="modal-description"></p>
     </div>
    </div>
   </div>
   <script>
     const defaultConfig = {
-      site_title: "I DONT KNOW",
+      site_title: "2025 달내제 안내",
       booth_map_label: "부스 지도",
       booth_search_label: "부스 찾기",
       events_label: "학교 행사 안내"
@@ -743,15 +771,6 @@
       document.getElementById(screenId).classList.remove('hidden');
     }
 
-    function updateFloorMap(floor) {
-      const mapImg = document.getElementById('school-map');
-      const placeholder = document.querySelector('.map-placeholder');
-      
-      mapImg.src = `floor${floor}_map.png`;
-      mapImg.style.display = 'block';
-      placeholder.style.display = 'none';
-    }
-
     function renderBoothTable(floor) {
       const tableBody = document.getElementById('booth-table-body');
       tableBody.innerHTML = '';
@@ -776,6 +795,7 @@
       document.getElementById('modal-booth-name').textContent = booth.name;
       document.getElementById('modal-club-name').textContent = booth.club;
       document.getElementById('modal-location').querySelector('span').textContent = `${booth.floor}층 ${booth.location}`;
+      document.getElementById('modal-keywords').textContent = `키워드: ${booth.keywords.join(', ')}`;
       document.getElementById('modal-description').textContent = booth.description || `${booth.club} 동아리에서 준비한 ${booth.name} 부스입니다. ${booth.floor}층 ${booth.location}에서 만나보세요!`;
       document.getElementById('booth-modal').classList.remove('hidden');
     }
@@ -888,5 +908,5 @@
 
     onConfigChange(window.elementSdk?.config || defaultConfig);
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9b268b381070abdd',t:'MTc2NjQ3OTExOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9b2b5f4cf64bea92',t:'MTc2NjUyOTc0OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
