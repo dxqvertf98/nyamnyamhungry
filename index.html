@@ -1,0 +1,883 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>학교 축제 안내</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+    body {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background-color: #FDFCF9;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .app-wrapper {
+      width: 100%;
+      min-height: 100%;
+      background-color: #FDFCF9;
+    }
+
+    /* Header */
+    .header {
+      width: 100%;
+      background: linear-gradient(135deg, #6B8E6F 0%, #8B9D83 100%);
+      color: white;
+      padding: 20px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .logo {
+      width: 50px;
+      height: 50px;
+      background-color: white;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .site-title {
+      font-size: 28px;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    /* Main Content */
+    .main-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .screen {
+      display: block;
+    }
+
+    .screen.hidden {
+      display: none;
+    }
+
+    /* Welcome Section */
+    .welcome-section {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .welcome-title {
+      font-size: 38px;
+      font-weight: bold;
+      color: #5A7A5E;
+      margin-bottom: 18px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .welcome-subtitle {
+      font-size: 19px;
+      color: #555;
+    }
+
+    /* Navigation Buttons */
+    .nav-buttons {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .nav-btn {
+      background: linear-gradient(135deg, #8B9D83 0%, #A8B89F 100%);
+      color: white;
+      padding: 35px 25px;
+      border: none;
+      border-radius: 4px;
+      font-size: 22px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(107, 142, 111, 0.25);
+      transition: all 0.3s ease;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+
+    .nav-btn:hover {
+      background: linear-gradient(135deg, #6B8E6F 0%, #8B9D83 100%);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(107, 142, 111, 0.35);
+    }
+
+    .nav-btn:active {
+      transform: translateY(0);
+    }
+
+    /* Back Button */
+    .back-btn {
+      background: linear-gradient(135deg, #B8B08D 0%, #C8C2A5 100%);
+      color: white;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 4px;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-bottom: 30px;
+      transition: all 0.3s ease;
+      box-shadow: 0 3px 12px rgba(184, 176, 141, 0.2);
+      text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+
+    .back-btn:hover {
+      background: linear-gradient(135deg, #9A9275 0%, #B8B08D 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 16px rgba(184, 176, 141, 0.3);
+    }
+
+    /* Content Card */
+    .content-card {
+      background-color: white;
+      padding: 35px;
+      border-radius: 6px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+      border: 1px solid #E8E6E0;
+    }
+
+    .section-title {
+      font-size: 30px;
+      font-weight: bold;
+      color: #5A7A5E;
+      margin-bottom: 28px;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+
+    /* Floor Indicator */
+    .floor-indicator {
+      background: linear-gradient(135deg, #6B8E6F 0%, #8B9D83 100%);
+      color: white;
+      padding: 20px;
+      border-radius: 4px;
+      text-align: center;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 16px rgba(107, 142, 111, 0.2);
+    }
+
+    .floor-indicator h2 {
+      font-size: 30px;
+      font-weight: bold;
+      margin: 0;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    /* Floor Buttons */
+    .floor-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .floor-btn {
+      background: linear-gradient(135deg, #A8B89F 0%, #B8C5AF 100%);
+      color: white;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 4px;
+      font-size: 19px;
+      font-weight: bold;
+      cursor: pointer;
+      min-width: 65px;
+      transition: all 0.3s ease;
+      box-shadow: 0 3px 12px rgba(107, 142, 111, 0.2);
+      text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+
+    .floor-btn:hover {
+      background: linear-gradient(135deg, #6B8E6F 0%, #8B9D83 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 16px rgba(107, 142, 111, 0.3);
+    }
+
+    /* Tables */
+    .table-container {
+      overflow-x: auto;
+      margin-bottom: 40px;
+    }
+
+    .booth-table,
+    .events-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .booth-table thead tr,
+    .events-table thead tr {
+      background: linear-gradient(135deg, #6B8E6F 0%, #8B9D83 100%);
+    }
+
+    .booth-table th,
+    .events-table th {
+      padding: 18px;
+      text-align: left;
+      color: white;
+      font-weight: bold;
+      border: 1px solid #E0DED8;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+
+    .booth-table td,
+    .events-table td {
+      padding: 18px;
+      border: 1px solid #E0DED8;
+      color: #333;
+    }
+
+    .booth-table tbody tr,
+    .events-table tbody tr {
+      border-bottom: 1px solid #ddd;
+      transition: background-color 0.2s ease;
+    }
+
+    .booth-table tbody tr {
+      cursor: pointer;
+    }
+
+    .booth-table tbody tr:hover {
+      background-color: rgba(139, 157, 131, 0.05);
+    }
+
+    .booth-table tbody tr td:nth-child(3) {
+      color: #6B8E6F;
+      font-weight: bold;
+    }
+
+    /* Map Section */
+    .map-section {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .map-title {
+      font-size: 20px;
+      font-weight: bold;
+      color: #6B8E6F;
+      margin-bottom: 20px;
+    }
+
+    .map-container {
+      background-color: #F5F3EE;
+      padding: 20px;
+      border-radius: 12px;
+      border: 2px dashed #D4CFC0;
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .school-map-img {
+      max-width: 100%;
+      max-height: 500px;
+      border-radius: 8px;
+      display: none;
+    }
+
+    .school-map-img[src]:not([src=""]) {
+      display: block;
+    }
+
+    .school-map-img[src]:not([src=""]) ~ .map-placeholder {
+      display: none;
+    }
+
+    .map-placeholder {
+      color: #999;
+      font-size: 16px;
+      padding: 60px 20px;
+    }
+
+    /* Search */
+    .search-box {
+      margin-bottom: 30px;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 18px;
+      border: 2px solid #D8D4CB;
+      border-radius: 4px;
+      font-size: 17px;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .search-input:focus {
+      outline: none;
+      border-color: #6B8E6F;
+      box-shadow: 0 4px 16px rgba(107, 142, 111, 0.15);
+    }
+
+    .search-results {
+      display: grid;
+      gap: 20px;
+    }
+
+    .search-result {
+      background-color: white;
+      padding: 26px;
+      border-radius: 4px;
+      border: 2px solid #D8D4CB;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    }
+
+    .search-result:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(107, 142, 111, 0.2);
+      border-color: #8B9D83;
+    }
+
+    .search-result h3 {
+      font-size: 24px;
+      font-weight: bold;
+      color: #5A7A5E;
+      margin: 0 0 10px 0;
+    }
+
+    .search-result .club-name {
+      font-size: 19px;
+      color: #6B8E6F;
+      margin-bottom: 14px;
+      font-weight: bold;
+    }
+
+    .search-result .location {
+      font-size: 17px;
+      color: #555;
+      margin-bottom: 18px;
+    }
+
+    .search-result .keywords {
+      font-size: 15px;
+      color: #888;
+    }
+
+    .search-result .more-btn {
+      background: linear-gradient(135deg, #8B9D83 0%, #A8B89F 100%);
+      color: white;
+      padding: 12px 22px;
+      border: none;
+      border-radius: 4px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 18px;
+      width: 100%;
+      transition: all 0.3s ease;
+      box-shadow: 0 3px 12px rgba(107, 142, 111, 0.2);
+      text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+
+    .search-result .more-btn:hover {
+      background: linear-gradient(135deg, #6B8E6F 0%, #8B9D83 100%);
+      box-shadow: 0 5px 16px rgba(107, 142, 111, 0.3);
+    }
+
+    .no-results {
+      text-align: center;
+      color: #666;
+      padding: 40px;
+    }
+
+    /* Modal */
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 1000;
+      overflow: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal.hidden {
+      display: none;
+    }
+
+    .modal-content {
+      background-color: white;
+      max-width: 600px;
+      width: 100%;
+      padding: 45px;
+      border-radius: 6px;
+      position: relative;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+      border: 1px solid #E8E6E0;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, #B8B08D 0%, #C8C2A5 100%);
+      color: white;
+      border: none;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      font-size: 26px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 3px 12px rgba(184, 176, 141, 0.25);
+    }
+
+    .close-btn:hover {
+      background: linear-gradient(135deg, #9A9275 0%, #B8B08D 100%);
+      transform: rotate(90deg);
+    }
+
+    .modal-title {
+      font-size: 30px;
+      font-weight: bold;
+      color: #5A7A5E;
+      margin-bottom: 18px;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+
+    .modal-club {
+      font-size: 21px;
+      color: #6B8E6F;
+      margin-bottom: 22px;
+      font-weight: bold;
+    }
+
+    .modal-location {
+      font-size: 19px;
+      color: #555;
+      margin-bottom: 14px;
+    }
+
+    .modal-description {
+      font-size: 17px;
+      color: #333;
+      line-height: 1.7;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .site-title {
+        font-size: 22px;
+      }
+      
+      .welcome-title {
+        font-size: 28px;
+      }
+      
+      .welcome-subtitle {
+        font-size: 16px;
+      }
+      
+      .nav-buttons {
+        grid-template-columns: 1fr;
+      }
+      
+      .nav-btn {
+        font-size: 18px;
+        padding: 25px 20px;
+      }
+      
+      .content-card {
+        padding: 20px;
+      }
+      
+      .section-title {
+        font-size: 24px;
+      }
+      
+      .booth-table th,
+      .booth-table td,
+      .events-table th,
+      .events-table td {
+        padding: 12px 8px;
+        font-size: 14px;
+      }
+      
+      .modal-content {
+        padding: 30px 20px;
+      }
+      
+      .modal-title {
+        font-size: 24px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header {
+        padding: 15px;
+      }
+      
+      .logo {
+        width: 40px;
+        height: 40px;
+      }
+      
+      .logo svg {
+        width: 28px;
+        height: 28px;
+      }
+      
+      .site-title {
+        font-size: 18px;
+      }
+      
+      .main-content {
+        padding: 20px 15px;
+      }
+      
+      .welcome-title {
+        font-size: 24px;
+      }
+      
+      .floor-buttons {
+        gap: 8px;
+      }
+      
+      .floor-btn {
+        padding: 10px 20px;
+        font-size: 16px;
+        min-width: 50px;
+      }
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body>
+  <div class="app-wrapper"><!-- Header -->
+   <header class="header">
+    <div class="header-content">
+     <div class="logo">
+      <svg width="36" height="36" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#8B9D83" /> <path d="M2 17L12 22L22 17" stroke="#8B9D83" stroke-width="2" /> <path d="M2 12L12 17L22 12" stroke="#8B9D83" stroke-width="2" />
+      </svg>
+     </div>
+     <h1 id="site-title" class="site-title">I DONT KNOW</h1>
+    </div>
+   </header><!-- Main Content -->
+   <main class="main-content"><!-- Lobby Screen -->
+    <div id="lobby-screen" class="screen">
+     <div class="welcome-section">
+      <h2 class="welcome-title">학교 축제에 오신 것을 환영합니다</h2>
+      <p class="welcome-subtitle">원하시는 메뉴를 선택해주세요</p>
+     </div>
+     <div class="nav-buttons"><button id="btn-booth-map" class="nav-btn"> <span id="nav-booth-map">부스 지도</span> </button> <button id="btn-booth-search" class="nav-btn"> <span id="nav-booth-search">부스 찾기</span> </button> <button id="btn-events" class="nav-btn"> <span id="nav-events">학교 행사 안내</span> </button>
+     </div>
+    </div><!-- Booth Map Screen -->
+    <div id="booth-map-screen" class="screen hidden"><button id="back-from-map" class="back-btn">← 돌아가기</button>
+     <div class="content-card">
+      <div class="floor-indicator">
+       <h2 id="current-floor">1층</h2>
+      </div>
+      <div class="floor-buttons"><button class="floor-btn" data-floor="1">1</button> <button class="floor-btn" data-floor="2">2</button> <button class="floor-btn" data-floor="3">3</button> <button class="floor-btn" data-floor="4">4</button> <button class="floor-btn" data-floor="5">5</button>
+      </div>
+      <div class="table-container">
+       <table id="booth-table" class="booth-table">
+        <thead>
+         <tr>
+          <th>위치</th>
+          <th>부스명</th>
+          <th>동아리명</th>
+         </tr>
+        </thead>
+        <tbody id="booth-table-body">
+        </tbody>
+       </table>
+      </div>
+      <div class="map-section">
+       <h3 class="map-title">학교 지도</h3>
+       <div class="map-container"><img id="school-map" src="" alt="학교 지도를 여기에 넣어주세요" class="school-map-img">
+        <p class="map-placeholder">여기에 학교 지도 이미지를 넣어주세요</p>
+       </div>
+      </div>
+     </div>
+    </div><!-- Booth Search Screen -->
+    <div id="booth-search-screen" class="screen hidden"><button id="back-from-search" class="back-btn">← 돌아가기</button>
+     <div class="content-card">
+      <h2 class="section-title">부스 찾기</h2>
+      <div class="search-box"><input id="search-input" type="text" placeholder="부스명, 동아리명, 키워드로 검색 (예: 방탈출, 비트크래프트, 과학)" class="search-input">
+      </div>
+      <div id="search-results" class="search-results">
+       <p class="no-results">검색어를 입력해주세요</p>
+      </div>
+     </div>
+    </div><!-- Events Screen -->
+    <div id="events-screen" class="screen hidden"><button id="back-from-events" class="back-btn">← 돌아가기</button>
+     <div class="content-card">
+      <h2 class="section-title">학교 행사 안내</h2>
+      <div class="table-container">
+       <table class="events-table">
+        <thead>
+         <tr>
+          <th>행사명</th>
+          <th>장소</th>
+          <th>시간</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td>귀신의 집 (방탈출)</td>
+          <td>3층 1-9, 1-10</td>
+          <td>9:00 ~ 11:30</td>
+         </tr>
+         <tr>
+          <td>꿈빛 파티시엘 (쿠키 꾸미기)</td>
+          <td>3층 학생자치실</td>
+          <td>9:00 ~ 11:30</td>
+         </tr>
+         <tr>
+          <td>소원을 말해봐 (트리 소망 적기)</td>
+          <td>3층 공유교실4</td>
+          <td>9:00 ~ 11:30</td>
+         </tr>
+         <tr>
+          <td>달천 네컷 (인생 네컷)</td>
+          <td>5층 2-9 이룸9</td>
+          <td>9:00 ~ 11:30</td>
+         </tr>
+         <tr>
+          <td>동아리 및 미술작품 전시</td>
+          <td>연결통로</td>
+          <td>9:00 ~ 15:30</td>
+         </tr>
+         <tr>
+          <td>공연</td>
+          <td>체육관</td>
+          <td>13:00 ~ 15:30</td>
+         </tr>
+        </tbody>
+       </table>
+      </div>
+     </div>
+    </div>
+   </main><!-- Modal for Booth Details -->
+   <div id="booth-modal" class="modal hidden">
+    <div class="modal-content"><button id="close-modal" class="close-btn">×</button>
+     <h3 id="modal-booth-name" class="modal-title"></h3>
+     <p id="modal-club-name" class="modal-club"></p>
+     <p id="modal-location" class="modal-location">📍 <span></span></p>
+     <p id="modal-description" class="modal-description"></p>
+    </div>
+   </div>
+  </div>
+  <script>
+    const defaultConfig = {
+      site_title: "I DONT KNOW",
+      booth_map_label: "부스 지도",
+      booth_search_label: "부스 찾기",
+      events_label: "학교 행사 안내"
+    };
+
+    const boothsData = [
+      { floor: 1, location: "도서관", name: "미니게임", club: "비블리오", keywords: ["게임", "미니게임"] },
+      { floor: 1, location: "공유교실 2", name: "미니게임", club: "플레어", keywords: ["게임", "미니게임"] },
+      { floor: 2, location: "공유교실 3", name: "공예품 제작", club: "레이아웃", keywords: ["공예", "만들기", "제작"] },
+      { floor: 2, location: "디지털라운지", name: "오락실", club: "비트크래프트", keywords: ["게임", "오락"] },
+      { floor: 3, location: "1-6", name: "방탈출", club: "1-6", keywords: ["방탈출", "게임", "추리"] },
+      { floor: 3, location: "1-7", name: "손난로 만들기", club: "뮤온", keywords: ["만들기", "과학", "손난로"] },
+      { floor: 3, location: "1-8", name: "단계별 체력 챌린지", club: "메디온", keywords: ["운동", "체력", "챌린지"] },
+      { floor: 3, location: "과학실", name: "오호 만들기", club: "아스타틴", keywords: ["과학", "만들기", "오호"] },
+      { floor: 3, location: "과학실", name: "상징 문화 모형 제작 및 퀴즈", club: "모멘트럼", keywords: ["과학", "문화", "퀴즈", "만들기"] },
+      { floor: 3, location: "과학실", name: "키트 활용 제작 활동", club: "스파티움", keywords: ["과학", "만들기", "키트"] },
+      { floor: 3, location: "방송실", name: "사진인화 및 퀴즈", club: "에어캐스트", keywords: ["사진", "퀴즈"] },
+      { floor: 4, location: "2-1", name: "체험형 카페", club: "로버트", keywords: ["카페", "음료", "체험"] },
+      { floor: 4, location: "2-2", name: "퀴즈 및 토론 전시", club: "테이크원", keywords: ["퀴즈", "토론", "전시"] },
+      { floor: 4, location: "1-5", name: "체험형 즉흥 연극", club: "청춘", keywords: ["연극", "공연", "체험"] },
+      { floor: 4, location: "1-5", name: "꽃 제작 및 꽃과 메시지 배달 서비스", club: "온핸즈", keywords: ["꽃", "만들기", "배달", "메시지"] },
+      { floor: 4, location: "1-4", name: "교과 퀴즈", club: "1-4", keywords: ["퀴즈", "교과"] },
+      { floor: 4, location: "1-3", name: "통합사회&통합과학 퀴즈", club: "1-3", keywords: ["퀴즈", "사회", "과학"] },
+      { floor: 4, location: "1-2", name: "미니게임", club: "1-2", keywords: ["게임", "미니게임"] },
+      { floor: 4, location: "1-1", name: "방탈출", club: "리미트리스", keywords: ["방탈출", "게임", "추리"] },
+      { floor: 4, location: "공유교실 5", name: "핸드크림 만들기", club: "안티모니", keywords: ["만들기", "핸드크림", "화장품"] },
+      { floor: 4, location: "이룸 7실", name: "타로", club: "운의 온도", keywords: ["타로", "점"] },
+      { floor: 5, location: "2-9", name: "영화 퀴즈", club: "퓨처프레임", keywords: ["영화", "퀴즈"] },
+      { floor: 5, location: "2-8", name: "조향 활동", club: "하이드림", keywords: ["향수", "만들기", "조향"] },
+      { floor: 5, location: "2-7", name: "시사 퀴즈", club: "비즈로우", keywords: ["시사", "퀴즈", "뉴스"] },
+      { floor: 5, location: "2-6", name: "방탈출", club: "2-6", keywords: ["방탈출", "게임", "추리"] },
+      { floor: 5, location: "2-4", name: "추리 게임", club: "더렉스", keywords: ["추리", "게임"] },
+      { floor: 5, location: "공유교실 6", name: "방탈출", club: "엔트로피", keywords: ["방탈출", "게임", "추리"] },
+      { floor: 5, location: "미술실", name: "키링 제작", club: "오브제", keywords: ["만들기", "키링", "미술"] },
+      { floor: 5, location: "음악실", name: "밴드 체험", club: "롤릭", keywords: ["밴드", "음악", "체험", "공연"] }
+    ];
+
+    let currentFloor = 1;
+
+    function showScreen(screenId) {
+      document.querySelectorAll('.screen').forEach(screen => {
+        screen.classList.add('hidden');
+      });
+      document.getElementById(screenId).classList.remove('hidden');
+    }
+
+    function renderBoothTable(floor) {
+      const tableBody = document.getElementById('booth-table-body');
+      tableBody.innerHTML = '';
+      
+      const floorBooths = boothsData.filter(booth => booth.floor === floor);
+      
+      floorBooths.forEach(booth => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${booth.location}</td>
+          <td>${booth.name}</td>
+          <td>${booth.club}</td>
+        `;
+        row.addEventListener('click', () => showBoothDetails(booth));
+        tableBody.appendChild(row);
+      });
+    }
+
+    function showBoothDetails(booth) {
+      document.getElementById('modal-booth-name').textContent = booth.name;
+      document.getElementById('modal-club-name').textContent = booth.club;
+      document.getElementById('modal-location').querySelector('span').textContent = `${booth.floor}층 ${booth.location}`;
+      document.getElementById('modal-description').textContent = `${booth.club} 동아리에서 준비한 ${booth.name} 부스입니다. ${booth.floor}층 ${booth.location}에서 만나보세요!`;
+      document.getElementById('booth-modal').classList.remove('hidden');
+    }
+
+    function searchBooths(query) {
+      const resultsContainer = document.getElementById('search-results');
+      resultsContainer.innerHTML = '';
+      
+      if (!query.trim()) {
+        resultsContainer.innerHTML = '<p class="no-results">검색어를 입력해주세요</p>';
+        return;
+      }
+      
+      const searchTerm = query.toLowerCase();
+      const results = boothsData.filter(booth => 
+        booth.name.toLowerCase().includes(searchTerm) ||
+        booth.club.toLowerCase().includes(searchTerm) ||
+        booth.keywords.some(keyword => keyword.toLowerCase().includes(searchTerm))
+      );
+      
+      if (results.length === 0) {
+        resultsContainer.innerHTML = '<p class="no-results">검색 결과가 없습니다</p>';
+        return;
+      }
+      
+      results.forEach(booth => {
+        const resultCard = document.createElement('div');
+        resultCard.className = 'search-result';
+        resultCard.innerHTML = `
+          <h3>${booth.name}</h3>
+          <p class="club-name">${booth.club}</p>
+          <p class="location">📍 ${booth.floor}층 ${booth.location}</p>
+          <p class="keywords">키워드: ${booth.keywords.join(', ')}</p>
+          <button class="more-btn">더 알아보기</button>
+        `;
+        resultCard.addEventListener('click', () => showBoothDetails(booth));
+        resultsContainer.appendChild(resultCard);
+      });
+    }
+
+    async function onConfigChange(config) {
+      const siteTitle = config.site_title || defaultConfig.site_title;
+      const boothMapLabel = config.booth_map_label || defaultConfig.booth_map_label;
+      const boothSearchLabel = config.booth_search_label || defaultConfig.booth_search_label;
+      const eventsLabel = config.events_label || defaultConfig.events_label;
+
+      document.getElementById('site-title').textContent = siteTitle;
+      document.getElementById('nav-booth-map').textContent = boothMapLabel;
+      document.getElementById('nav-booth-search').textContent = boothSearchLabel;
+      document.getElementById('nav-events').textContent = eventsLabel;
+    }
+
+    // Event Listeners
+    document.getElementById('btn-booth-map').addEventListener('click', () => {
+      showScreen('booth-map-screen');
+      renderBoothTable(currentFloor);
+    });
+
+    document.getElementById('btn-booth-search').addEventListener('click', () => {
+      showScreen('booth-search-screen');
+    });
+
+    document.getElementById('btn-events').addEventListener('click', () => {
+      showScreen('events-screen');
+    });
+
+    document.getElementById('back-from-map').addEventListener('click', () => showScreen('lobby-screen'));
+    document.getElementById('back-from-search').addEventListener('click', () => showScreen('lobby-screen'));
+    document.getElementById('back-from-events').addEventListener('click', () => showScreen('lobby-screen'));
+
+    document.querySelectorAll('.floor-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        currentFloor = parseInt(button.dataset.floor);
+        document.getElementById('current-floor').textContent = `${currentFloor}층`;
+        renderBoothTable(currentFloor);
+      });
+    });
+
+    document.getElementById('search-input').addEventListener('input', (e) => {
+      searchBooths(e.target.value);
+    });
+
+    document.getElementById('close-modal').addEventListener('click', () => {
+      document.getElementById('booth-modal').classList.add('hidden');
+    });
+
+    document.getElementById('booth-modal').addEventListener('click', (e) => {
+      if (e.target.id === 'booth-modal') {
+        document.getElementById('booth-modal').classList.add('hidden');
+      }
+    });
+
+    // Element SDK Integration
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities: (config) => ({
+          recolorables: [],
+          borderables: [],
+          fontEditable: undefined,
+          fontSizeable: undefined
+        }),
+        mapToEditPanelValues: (config) => new Map([
+          ["site_title", config.site_title || defaultConfig.site_title],
+          ["booth_map_label", config.booth_map_label || defaultConfig.booth_map_label],
+          ["booth_search_label", config.booth_search_label || defaultConfig.booth_search_label],
+          ["events_label", config.events_label || defaultConfig.events_label]
+        ])
+      });
+    }
+
+    onConfigChange(window.elementSdk?.config || defaultConfig);
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9b23bb95e319ea0f',t:'MTc2NjQ0OTY0Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
