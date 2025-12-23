@@ -579,7 +579,7 @@
   <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
  </head>
  <body>
-  <div class="app-wrapper"><!-- Header -->
+  <div class="app-wrapper">
    <header class="header">
     <div class="header-content">
      <div class="logo">
@@ -588,8 +588,8 @@
      </div>
      <h1 id="site-title" class="site-title">I DONT KNOW</h1>
     </div>
-   </header><!-- Main Content -->
-   <main class="main-content"><!-- Lobby Screen -->
+   </header>
+   <main class="main-content">
     <div id="lobby-screen" class="screen">
      <div class="welcome-section">
       <h2 class="welcome-title">학교 축제에 오신 것을 환영합니다</h2>
@@ -597,7 +597,7 @@
      </div>
      <div class="nav-buttons"><button id="btn-booth-map" class="nav-btn"> <span id="nav-booth-map">부스 지도</span> </button> <button id="btn-booth-search" class="nav-btn"> <span id="nav-booth-search">부스 찾기</span> </button> <button id="btn-events" class="nav-btn"> <span id="nav-events">학교 행사 안내</span> </button>
      </div>
-    </div><!-- Booth Map Screen -->
+    </div>
     <div id="booth-map-screen" class="screen hidden"><button id="back-from-map" class="back-btn">← 돌아가기</button>
      <div class="content-card">
       <div class="floor-indicator">
@@ -611,7 +611,7 @@
          <tr>
           <th>위치</th>
           <th>부스명</th>
-          <th>동아�����명</th>
+          <th>동아리명</th>
          </tr>
         </thead>
         <tbody id="booth-table-body">
@@ -620,12 +620,12 @@
       </div>
       <div class="map-section">
        <h3 class="map-title">학교 지도</h3>
-       <div class="map-container"><img id="school-map" src="" alt="학교 지도를 여기에 넣어주세요" class="school-map-img">
+       <div class="map-container"><img id="school-map" src="" alt="학교 지도를 여기에 넣어주세요" class="school-map-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
         <p class="map-placeholder">여기에 학교 지도 이미지를 넣어주세요</p>
        </div>
       </div>
      </div>
-    </div><!-- Booth Search Screen -->
+    </div>
     <div id="booth-search-screen" class="screen hidden"><button id="back-from-search" class="back-btn">← 돌아가기</button>
      <div class="content-card">
       <h2 class="section-title">부스 찾기</h2>
@@ -635,7 +635,7 @@
        <p class="no-results">검색어를 입력해주세요</p>
       </div>
      </div>
-    </div><!-- Events Screen -->
+    </div>
     <div id="events-screen" class="screen hidden"><button id="back-from-events" class="back-btn">← 돌아가기</button>
      <div class="content-card">
       <h2 class="section-title">학교 행사 안내</h2>
@@ -660,7 +660,7 @@
           <td>9:00 ~ 11:30</td>
          </tr>
          <tr>
-          <td>소���을 말해봐 (트리 소망 적기)</td>
+          <td>소원을 말해봐 (트리 소망 적기)</td>
           <td>3층 공유교실4</td>
           <td>9:00 ~ 11:30</td>
          </tr>
@@ -684,7 +684,7 @@
       </div>
      </div>
     </div>
-   </main><!-- Modal for Booth Details -->
+   </main>
    <div id="booth-modal" class="modal hidden">
     <div class="modal-content"><button id="close-modal" class="close-btn">×</button>
      <h3 id="modal-booth-name" class="modal-title"></h3>
@@ -703,35 +703,35 @@
     };
 
     const boothsData = [
-      { floor: 1, location: "도서관", name: "미니게임", club: "비블리오", keywords: ["게임", "미니게임"] },
-      { floor: 1, location: "공유교실 2", name: "미니게임", club: "플레어", keywords: ["게임", "미니게임"] },
-      { floor: 2, location: "공유교실 3", name: "공예품 제작", club: "레이아웃", keywords: ["공예", "만들기", "제작"] },
-      { floor: 2, location: "디지털라운지", name: "오락실", club: "비트크래프트", keywords: ["게임", "오락"] },
-      { floor: 3, location: "1-6", name: "방탈출", club: "1-6", keywords: ["방탈출", "게임", "추리"] },
-      { floor: 3, location: "1-7", name: "손난로 만들기", club: "뮤온", keywords: ["만들기", "과학", "손난로"] },
-      { floor: 3, location: "1-8", name: "단계별 체력 챌린지", club: "메디온", keywords: ["운동", "체력", "챌린지"] },
-      { floor: 3, location: "과학실", name: "오호 만들기", club: "아스타틴", keywords: ["과학", "만들기", "오호"] },
-      { floor: 3, location: "과학실", name: "상징 문화 모형 제작 및 퀴즈", club: "모멘트럼", keywords: ["과학", "문화", "퀴즈", "만들기"] },
-      { floor: 3, location: "과학실", name: "키트 활용 제작 활동", club: "스파티움", keywords: ["과학", "만들기", "키트"] },
-      { floor: 3, location: "방송실", name: "사진인화 및 퀴즈", club: "에어캐스트", keywords: ["사진", "퀴즈"] },
-      { floor: 4, location: "2-1", name: "체험형 카페", club: "로버트", keywords: ["카페", "음료", "체험"] },
-      { floor: 4, location: "2-2", name: "퀴즈 및 토론 전시", club: "테이��원", keywords: ["퀴즈", "토론", "전시"] },
-      { floor: 4, location: "1-5", name: "체험형 즉흥 연극", club: "청춘", keywords: ["연극", "공연", "체험"] },
-      { floor: 4, location: "1-5", name: "꽃 제작 및 꽃과 메시지 배달 서���스", club: "온핸즈", keywords: ["꽃", "만들기", "배달", "메시지"] },
-      { floor: 4, location: "1-4", name: "교과 퀴즈", club: "1-4", keywords: ["퀴즈", "교과"] },
-      { floor: 4, location: "1-3", name: "통합사회&통합과학 퀴즈", club: "1-3", keywords: ["퀴즈", "사회", "과학"] },
-      { floor: 4, location: "1-2", name: "미니게임", club: "1-2", keywords: ["게임", "미니게임"] },
-      { floor: 4, location: "1-1", name: "방탈출", club: "리미트리스", keywords: ["방탈출", "게임", "추리"] },
-      { floor: 4, location: "공유교실 5", name: "핸드크림 만들기", club: "안티모니", keywords: ["만들기", "핸드크림", "화장품"] },
-      { floor: 4, location: "이룸 7실", name: "타로", club: "운의 온도", keywords: ["타로", "점"] },
-      { floor: 5, location: "2-9", name: "영화 퀴즈", club: "퓨처프레임", keywords: ["영화", "퀴즈"] },
-      { floor: 5, location: "2-8", name: "조향 활동", club: "하이드림", keywords: ["향수", "만들기", "조향"] },
-      { floor: 5, location: "2-7", name: "시사 퀴즈", club: "비즈로우", keywords: ["시사", "퀴즈", "뉴스"] },
-      { floor: 5, location: "2-6", name: "방탈출", club: "2-6", keywords: ["방탈출", "게임", "추리"] },
-      { floor: 5, location: "2-4", name: "추리 게임", club: "더렉스", keywords: ["추리", "게임"] },
-      { floor: 5, location: "공유교실 6", name: "방탈출", club: "엔트로피", keywords: ["방탈출", "게임", "추리"] },
-      { floor: 5, location: "미술실", name: "키링 제작", club: "오브제", keywords: ["만들기", "키링", "미술"] },
-      { floor: 5, location: "음악실", name: "밴드 체험", club: "롤릭", keywords: ["밴드", "음악", "체험", "공연"] }
+      { floor: 1, location: "도서관", name: "미니게임", club: "비블리오", keywords: ["게임", "미니게임"], description: "여기에 비블리오 동아리의 미니게임 부스 설명을 작성해주세요." },
+      { floor: 1, location: "공유교실 2", name: "미니게임", club: "플레어", keywords: ["게임", "미니게임"], description: "여기에 플레어 동아리의 미니게임 부스 설명을 작성해주세요." },
+      { floor: 2, location: "공유교실 3", name: "공예품 제작", club: "레이아웃", keywords: ["공예", "만들기", "제작"], description: "여기에 레이아웃 동아리의 공예품 제작 부스 설명을 작성해주세요." },
+      { floor: 2, location: "디지털라운지", name: "오락실", club: "비트크래프트", keywords: ["게임", "오락"], description: "여기에 비트크래프트 동아리의 오락실 부스 설명을 작성해주세요." },
+      { floor: 3, location: "1-6", name: "방탈출", club: "1-6", keywords: ["방탈출", "게임", "추리"], description: "여기에 1-6 반의 방탈출 부스 설명을 작성해주세요." },
+      { floor: 3, location: "1-7", name: "손난로 만들기", club: "뮤온", keywords: ["만들기", "과학", "손난로"], description: "여기에 뮤온 동아리의 손난로 만들기 부스 설명을 작성해주세요." },
+      { floor: 3, location: "1-8", name: "단계별 체력 챌린지", club: "메디온", keywords: ["운동", "체력", "챌린지"], description: "여기에 메디온 동아리의 단계별 체력 챌린지 부스 설명을 작성해주세요." },
+      { floor: 3, location: "과학실", name: "오호 만들기", club: "아스타틴", keywords: ["과학", "만들기", "오호"], description: "여기에 아스타틴 동아리의 오호 만들기 부스 설명을 작성해주세요." },
+      { floor: 3, location: "과학실", name: "상징 문화 모형 제작 및 퀴즈", club: "모멘트럼", keywords: ["과학", "문화", "퀴즈", "만들기"], description: "여기에 모멘트럼 동아리의 상징 문화 모형 제작 및 퀴즈 부스 설명을 작성해주세요." },
+      { floor: 3, location: "과학실", name: "키트 활용 제작 활동", club: "스파티움", keywords: ["과학", "만들기", "키트"], description: "여기에 스파티움 동아리의 키트 활용 제작 활동 부스 설명을 작성해주세요." },
+      { floor: 3, location: "방송실", name: "사진인화 및 퀴즈", club: "에어캐스트", keywords: ["사진", "퀴즈"], description: "여기에 에어캐스트 동아리의 사진인화 및 퀴즈 부스 설명을 작성해주세요." },
+      { floor: 4, location: "2-1", name: "체험형 카페", club: "로버트", keywords: ["카페", "음료", "체험"], description: "여기에 로버트 동아리의 체험형 카페 부스 설명을 작성해주세요." },
+      { floor: 4, location: "2-2", name: "퀴즈 및 토론 전시", club: "테이블원", keywords: ["퀴즈", "토론", "전시"], description: "여기에 테이블원 동아리의 퀴즈 및 토론 전시 부스 설명을 작성해주세요." },
+      { floor: 4, location: "1-5", name: "체험형 즉흥 연극", club: "청춘", keywords: ["연극", "공연", "체험"], description: "여기에 청춘 동아리의 체험형 즉흥 연극 부스 설명을 작성해주세요." },
+      { floor: 4, location: "1-5", name: "꽃 제작 및 꽃과 메시지 배달 서비스", club: "온핸즈", keywords: ["꽃", "만들기", "배달", "메시지"], description: "여기에 온핸즈 동아리의 꽃 제작 및 꽃과 메시지 배달 서비스 부스 설명을 작성해주세요." },
+      { floor: 4, location: "1-4", name: "교과 퀴즈", club: "1-4", keywords: ["퀴즈", "교과"], description: "여기에 1-4 반의 교과 퀴즈 부스 설명을 작성해주세요." },
+      { floor: 4, location: "1-3", name: "통합사회&통합과학 퀴즈", club: "1-3", keywords: ["퀴즈", "사회", "과학"], description: "여기에 1-3 반의 통합사회&통합과학 퀴즈 부스 설명을 작성해주세요." },
+      { floor: 4, location: "1-2", name: "미니게임", club: "1-2", keywords: ["게임", "미니게임"], description: "여기에 1-2 반의 미니게임 부스 설명을 작성해주세요." },
+      { floor: 4, location: "1-1", name: "방탈출", club: "리미트리스", keywords: ["방탈출", "게임", "추리"], description: "여기에 리미트리스 동아리의 방탈출 부스 설명을 작성해주세요." },
+      { floor: 4, location: "공유교실 5", name: "핸드크림 만들기", club: "안티모니", keywords: ["만들기", "핸드크림", "화장품"], description: "여기에 안티모니 동아리의 핸드크림 만들기 부스 설명을 작성해주세요." },
+      { floor: 4, location: "이룸 7실", name: "타로", club: "운의 온도", keywords: ["타로", "점"], description: "여기에 운의 온도 동아리의 타로 부스 설명을 작성해주세요." },
+      { floor: 5, location: "2-9", name: "영화 퀴즈", club: "퓨처프레임", keywords: ["영화", "퀴즈"], description: "여기에 퓨처프레임 동아리의 영화 퀴즈 부스 설명을 작성해주세요." },
+      { floor: 5, location: "2-8", name: "조향 활동", club: "하이드림", keywords: ["향수", "만들기", "조향"], description: "여기에 하이드림 동아리의 조향 활동 부스 설명을 작성해주세요." },
+      { floor: 5, location: "2-7", name: "시사 퀴즈", club: "비즈로우", keywords: ["시사", "퀴즈", "뉴스"], description: "여기에 비즈로우 동아리의 시사 퀴즈 부스 설명을 작성해주세요." },
+      { floor: 5, location: "2-6", name: "방탈출", club: "2-6", keywords: ["방탈출", "게임", "추리"], description: "여기에 2-6 반의 방탈출 부스 설명을 작성해주세요." },
+      { floor: 5, location: "2-4", name: "추리 게임", club: "더렉스", keywords: ["추리", "게임"], description: "여기에 더렉스 동아리의 추리 게임 부스 설명을 작성해주세요." },
+      { floor: 5, location: "공유교실 6", name: "방탈출", club: "엔트로피", keywords: ["방탈출", "게임", "추리"], description: "여기에 엔트로피 동아리의 방탈출 부스 설명을 작성해주세요." },
+      { floor: 5, location: "미술실", name: "키링 제작", club: "오브제", keywords: ["만들기", "키링", "미술"], description: "여기에 오브제 동아리의 키링 제작 부스 설명을 작성해주세요." },
+      { floor: 5, location: "음악실", name: "밴드 체험", club: "롤릭", keywords: ["밴드", "음악", "체험", "공연"], description: "여기에 롤릭 동아리의 밴드 체험 부스 설명을 작성해주세요." }
     ];
 
     let currentFloor = 1;
@@ -741,6 +741,15 @@
         screen.classList.add('hidden');
       });
       document.getElementById(screenId).classList.remove('hidden');
+    }
+
+    function updateFloorMap(floor) {
+      const mapImg = document.getElementById('school-map');
+      const placeholder = document.querySelector('.map-placeholder');
+      
+      mapImg.src = `floor${floor}_map.png`;
+      mapImg.style.display = 'block';
+      placeholder.style.display = 'none';
     }
 
     function renderBoothTable(floor) {
@@ -759,6 +768,8 @@
         row.addEventListener('click', () => showBoothDetails(booth));
         tableBody.appendChild(row);
       });
+      
+      updateFloorMap(floor);
     }
 
     function showBoothDetails(booth) {
@@ -817,7 +828,6 @@
       document.getElementById('nav-events').textContent = eventsLabel;
     }
 
-    // Event Listeners
     document.getElementById('btn-booth-map').addEventListener('click', () => {
       showScreen('booth-map-screen');
       renderBoothTable(currentFloor);
@@ -857,7 +867,6 @@
       }
     });
 
-    // Element SDK Integration
     if (window.elementSdk) {
       window.elementSdk.init({
         defaultConfig,
@@ -879,5 +888,5 @@
 
     onConfigChange(window.elementSdk?.config || defaultConfig);
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9b243ddc0053d160',t:'MTc2NjQ1NDk3OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9b268b381070abdd',t:'MTc2NjQ3OTExOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
