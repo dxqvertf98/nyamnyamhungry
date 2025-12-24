@@ -625,7 +625,7 @@
    <main class="main-content"><!-- Lobby Screen -->
     <div id="lobby-screen" class="screen">
      <div class="welcome-section">
-      <h2 class="welcome-title">학교 축제에 오신 것을 환영합니다</h2>
+      <h2 class="welcome-title">2025 달내제 안내 웹사이트에 오신 것을 환영합니다</h2>
       <p class="welcome-subtitle">원하시는 메뉴를 선택해주세요</p>
      </div>
      <div class="nav-buttons"><button id="btn-booth-map" class="nav-btn"> <span id="nav-booth-map">부스 지도</span> </button> <button id="btn-booth-search" class="nav-btn"> <span id="nav-booth-search">부스 찾기</span> </button> <button id="btn-events" class="nav-btn"> <span id="nav-events">학교 행사 안내</span> </button>
@@ -731,35 +731,35 @@
     };
 
     const boothsData = [
-      { floor: 1, location: "도서관", name: "미니게임", club: "비블리오", keywords: ["게임", "미니게임"], description: "여기에 비블리오 동아리의 미니게임 부스 설명을 작성해주세요." },
-      { floor: 1, location: "공유교실 2", name: "미니게임", club: "플레어", keywords: ["게임", "미니게임"], description: "여기에 플레어 동아리의 미니게임 부스 설명을 작성해주세요." },
-      { floor: 2, location: "공유교실 3", name: "공예품 제작", club: "레이아웃", keywords: ["공예", "만들기", "제작"], description: "여기에 레이아웃 동아리의 공예품 제작 부스 설명을 작성해주세요." },
-      { floor: 2, location: "디지털라운지", name: "오락실", club: "비트크래프트", keywords: ["게임", "오락"], description: "여기에 비트크래프트 동아리의 오락실 부스 설명을 작성해주세요." },
-      { floor: 3, location: "1-6", name: "방탈출", club: "1-6", keywords: ["방탈출", "게임", "추리"], description: "여기에 1-6 반의 방탈출 부스 설명을 작성해주세요." },
-      { floor: 3, location: "1-7", name: "손난로 만들기", club: "뮤온", keywords: ["만들기", "과학", "손난로"], description: "여기에 뮤온 동아리의 손난로 만들기 부스 설명을 작성해주세요." },
-      { floor: 3, location: "1-8", name: "단계별 체력 챌린지", club: "메디온", keywords: ["운동", "체력", "챌린지"], description: "여기에 메디온 동아리의 단계별 체력 챌린지 부스 설명을 작성해주세요." },
-      { floor: 3, location: "과학실", name: "오호 만들기", club: "아스타틴", keywords: ["과학", "만들기", "오호"], description: "여기에 아스타틴 동아리의 오호 만들기 부스 설명을 작성해주세요." },
-      { floor: 3, location: "과학실", name: "상징 문화 모형 제작 및 퀴즈", club: "모멘트럼", keywords: ["과학", "문화", "퀴즈", "만들기"], description: "여기에 모멘트럼 동아리의 상징 문화 모형 제작 및 퀴즈 부스 설명을 작성해주세요." },
-      { floor: 3, location: "과학실", name: "키트 활용 제작 활동", club: "스파티움", keywords: ["과학", "만들기", "키트"], description: "여기에 스파티움 동아리의 키트 활용 제작 활동 부스 설명을 작성해주세요." },
-      { floor: 3, location: "방송실", name: "사진인화 및 퀴즈", club: "에어캐스트", keywords: ["사진", "퀴즈"], description: "여기에 에어캐스트 동아리의 사진인화 및 퀴즈 부스 설명을 작성해주세요." },
-      { floor: 4, location: "2-1", name: "체험형 카페", club: "로버트", keywords: ["카페", "음료", "체험"], description: "여기에 로버트 동아리의 체험형 카페 부스 설명을 작성해주세요." },
-      { floor: 4, location: "2-2", name: "퀴즈 및 토론 전시", club: "테이블원", keywords: ["퀴즈", "토론", "전시"], description: "여기에 테이블원 동아리의 퀴즈 및 토론 전시 부스 설명을 작성해주세요." },
-      { floor: 4, location: "1-5", name: "체험형 즉흥 연극", club: "청춘", keywords: ["연극", "공연", "체험"], description: "여기에 청춘 동아리의 체험형 즉흥 연극 부스 설명을 작성해주세요." },
-      { floor: 4, location: "1-5", name: "꽃 제작 및 꽃과 메시지 배달 서비스", club: "온핸즈", keywords: ["꽃", "만들기", "배달", "메시지"], description: "여기에 온핸즈 동아리의 꽃 제작 및 꽃과 메시지 배달 서비스 부스 설명을 작성해주세요." },
-      { floor: 4, location: "1-4", name: "교과 퀴즈", club: "1-4", keywords: ["퀴즈", "교과"], description: "여기에 1-4 반의 교과 퀴즈 부스 설명을 작성해주세요." },
-      { floor: 4, location: "1-3", name: "통합사회&통합과학 퀴즈", club: "1-3", keywords: ["퀴즈", "사회", "과학"], description: "여기에 1-3 반의 통합사회&통합과학 퀴즈 부스 설명을 작성해주세요." },
-      { floor: 4, location: "1-2", name: "미니게임", club: "1-2", keywords: ["게임", "미니게임"], description: "여기에 1-2 반의 미니게임 부스 설명을 작성해주세요." },
-      { floor: 4, location: "1-1", name: "방탈출", club: "리미트리스", keywords: ["방탈출", "게임", "추리"], description: "여기에 리미트리스 동아리의 방탈출 부스 설명을 작성해주세요." },
-      { floor: 4, location: "공유교실 5", name: "핸드크림 만들기", club: "안티모니", keywords: ["만들기", "핸드크림", "화장품"], description: "여기에 안티모니 동아리의 핸드크림 만들기 부스 설명을 작성해주세요." },
-      { floor: 4, location: "이룸 7실", name: "타로", club: "운의 온도", keywords: ["타로", "점"], description: "여기에 운의 온도 동아리의 타로 부스 설명을 작성해주세요." },
-      { floor: 5, location: "2-9", name: "영화 퀴즈", club: "퓨처프레임", keywords: ["영화", "퀴즈"], description: "여기에 퓨처프레임 동아리의 영화 퀴즈 부스 설명을 작성해주세요." },
-      { floor: 5, location: "2-8", name: "조향 활동", club: "하이드림", keywords: ["향수", "만들기", "조향"], description: "여기에 하이드림 동아리의 조향 활동 부스 설명을 작성해주세요." },
-      { floor: 5, location: "2-7", name: "시사 퀴즈", club: "비즈로우", keywords: ["시사", "퀴즈", "뉴스"], description: "여기에 비즈로우 동아리의 시사 퀴즈 부스 설명을 작성해주세요." },
-      { floor: 5, location: "2-6", name: "방탈출", club: "2-6", keywords: ["방탈출", "게임", "추리"], description: "여기에 2-6 반의 방탈출 부스 설명을 작성해주세요." },
-      { floor: 5, location: "2-4", name: "추리 게임", club: "더렉스", keywords: ["추리", "게임"], description: "여기에 더렉스 동아리의 추리 게임 부스 설명을 작성해주세요." },
-      { floor: 5, location: "공유교실 6", name: "방탈출", club: "엔트로피", keywords: ["방탈출", "게임", "추리"], description: "여기에 엔트로피 동아리의 방탈출 부스 설명을 작성해주세요." },
-      { floor: 5, location: "미술실", name: "키링 제작", club: "오브제", keywords: ["만들기", "키링", "미술"], description: "여기에 오브제 동아리의 키링 제작 부스 설명을 작성해주세요." },
-      { floor: 5, location: "음악실", name: "밴드 체험", club: "롤릭", keywords: ["밴드", "음악", "체험", "공연"], description: "여기에 롤릭 동아리의 밴드 체험 부스 설명을 작성해주세요." }
+      { floor: 1, location: "도서관", name: "미니게임", club: "비블리오", keywords: ["게임", "미니게임"], description: "간단하지만 중독성 있는 미니게임을 즐길 수 있는 부스로, 누구나 부담 없이 참여할 수 있습니다." },
+      { floor: 1, location: "공유교실 2", name: "미니게임", club: "플레어", keywords: ["게임", "미니게임"], description: "순발력과 집중력을 시험하는 다양한 미니게임을 체험할 수 있는 게임 부스입니다." },
+      { floor: 2, location: "공유교실 3", name: "공예품 제작", club: "레이아웃", keywords: ["공예", "만들기", "제작"], description: "직접 손으로 공예품을 만들어 보며 창의력을 발휘할 수 있는 체험형 부스입니다." },
+      { floor: 2, location: "디지털라운지", name: "오락실", club: "비트크래프트", keywords: ["게임", "오락"], description: "부원들이 만든 다양한 게임들을 즐겨볼 수 있습니다"},
+      { floor: 3, location: "1-6", name: "방탈출", club: "1-6", keywords: ["방탈출", "게임", "추리"], description: "단서를 찾아 문제를 해결하는 방탈출 게임 부스입니다." },
+      { floor: 3, location: "1-7", name: "손난로 만들기", club: "뮤온", keywords: ["만들기", "과학", "손난로"], description: "과학 원리를 활용해 직접 손난로를 만들어 보는 체험 부스입니다." },
+      { floor: 3, location: "1-8", name: "단계별 체력 챌린지", club: "메디온", keywords: ["운동", "체력", "챌린지"], description: "단계별로 구성된 미션을 수행하며 자신의 체력을 테스트하는 챌린지 부스입니다." },
+      { floor: 3, location: "과학실", name: "키트 활용 제작 활동", club: "아스타틴", keywords: ["과학", "만들기", "키트"], description: "과학 키트를 활용해 간단한 제작 활동을 체험할 수 있는 부스입니다." },
+      { floor: 3, location: "과학실", name: "상징 문화 모형 제작 및 퀴즈", club: "모멘트럼", keywords: ["과학", "문화", "퀴즈", "만들기"], description: "상징과 문화를 주제로 모형 제작과 퀴즈를 함께 즐길 수 있는 부스입니다." },
+      { floor: 3, location: "과학실", name: "키트 활용 제작 활동", club: "스파티움", keywords: ["과학", "만들기", "키트"], description: "오호를 직접 만들어 보는 과학 체험 부스입니다" },
+      { floor: 3, location: "방송실", name: "사진인화 및 퀴즈", club: "에어캐스트", keywords: ["사진", "퀴즈"], description: "촬영한 사진을 인화하고 관련 퀴즈에 참여할 수 있는 체험 부스입니다." },
+      { floor: 4, location: "2-1", name: "체험형 카페", club: "로버트", keywords: ["카페", "음료", "체험"], description: "직접 주문하고 참여하는 방식의 체험형 카페 부스입니다." },
+      { floor: 4, location: "2-2", name: "퀴즈 및 토론 전시", club: "테이블원", keywords: ["퀴즈", "토론", "전시"], description: "다양한 주제의 퀴즈와 토론 내용을 전시로 만나볼 수 있는 부스입니다." },
+      { floor: 4, location: "1-5", name: "체험형 즉흥 연극", club: "청춘", keywords: ["연극", "공연", "체험"], description: "관객이 직접 참여하는 즉흥 연극을 체험할 수 있는 공연형 부스입니다." },
+      { floor: 4, location: "1-5", name: "꽃 제작 및 꽃과 메시지 배달 서비스", club: "온핸즈", keywords: ["꽃", "만들기", "배달", "메시지"], description: "꽃을 직접 제작하고 메시지와 함께 전달할 수 있는 감성 체험 부스입니다." },
+      { floor: 4, location: "1-4", name: "교과 퀴즈", club: "1-4", keywords: ["퀴즈", "교과"], description: "교과 내용을 바탕으로 한 퀴즈에 도전할 수 있는 학습형 부스입니다." },
+      { floor: 4, location: "1-3", name: "통합사회&통합과학 퀴즈", club: "1-3", keywords: ["퀴즈", "사회", "과학"], description: "통합사회와 통합과학 내용을 활용한 퀴즈를 풀어보는 부스입니다." },
+      { floor: 4, location: "1-2", name: "미니게임", club: "1-2", keywords: ["게임", "미니게임"], description: "짧은 시간에 즐길 수 있는 다양한 미니게임을 제공하는 부스입니다." },
+      { floor: 4, location: "1-1", name: "방탈출", club: "리미트리스", keywords: ["방탈출", "게임", "추리"], description: "논리적 사고를 활용해 문제를 해결하는 방탈출 체험 부스입니다." },
+      { floor: 4, location: "공유교실 5", name: "핸드크림 만들기", club: "안티모니", keywords: ["만들기", "핸드크림", "화장품"], description: "재료를 선택해 나만의 핸드크림을 만들어 보는 체험 부스입니다." },
+      { floor: 4, location: "이룸 7실", name: "사주", club: "운의 온도", keywords: ["사주", "운세"], description: " 사주를 통해 간단한 운세와 이야기를 나눠볼 수 있는 부스입니다." },
+      { floor: 5, location: "2-9", name: "영화 퀴즈", club: "퓨처프레임", keywords: ["영화", "퀴즈"], description: "영화와 관련된 다양한 문제를 맞혀보는 퀴즈 부스입니다" },
+      { floor: 5, location: "2-8", name: "조향 활동", club: "하이드림", keywords: ["향수", "만들기", "조향"], description: "향을 조합해 자신만의 향수를 만들어 보는 조향 체험 부스입니다." },
+      { floor: 5, location: "2-7", name: "시사 퀴즈", club: "비즈로우", keywords: ["시사", "퀴즈", "뉴스"], description: "최근 시사 이슈를 주제로 한 퀴즈에 도전하는 부스입니다." },
+      { floor: 5, location: "2-6", name: "방탈출", club: "2-6", keywords: ["방탈출", "게임", "추리"], description: "탈출을 목표로 하는 방탈출 게임 부스입니다.." },
+      { floor: 5, location: "2-4", name: "추리 게임", club: "더렉스", keywords: ["추리", "게임"], description: "단서를 조합해 사건을 해결하는 추리 게임 부스입니다." },
+      { floor: 5, location: "공유교실 6", name: "방탈출", club: "엔트로피", keywords: ["방탈출", "게임", "추리"], description: "탄탄한 스토리를 기반으로 하여 문제를 해결하며 진행하는 방탈출 체험 부스입니다." },
+      { floor: 5, location: "미술실", name: "키링 제작", club: "오브제", keywords: ["만들기", "키링", "미술"], description: "개성 있는 디자인으로 키링을 직접 만들어 볼 수 있는 제작 부스입니다." },
+      { floor: 5, location: "음악실", name: "밴드 체험", club: "롤릭", keywords: ["밴드", "음악", "체험", "공연"], description: "악기를 직접 연주하며 밴드 활동을 체험할 수 있는 음악 부스입니다." }
     ];
 
     let currentFloor = 1;
